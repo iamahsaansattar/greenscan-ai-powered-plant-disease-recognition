@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Health Report | GreenScan</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/magnifying-glass-logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg glassy-navbar">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            GreenScan
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'home' %}active{% endif %}"
+                       href="{{ url_for('home') }}">
+                        HOME
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'about' %}active{% endif %}"
+                       href="{{ url_for('about') }}">
+                        ABOUT
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'contact' %}active{% endif %}"
+                       href="{{ url_for('contact') }}">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{{ url_for('upload') }}" class="scan-btn">
+                        SCAN YOUR PLANT
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== RESULT PAGE CONTAINER ===================== -->
+<div class="result-container">
+
+    <!-- ===================== ABOVE THE FOLD ===================== -->
+    <div class="result-box">
+
+        <!-- Image -->
+        <div class="result-img-container">
+            <img src="{{ imagepath }}" alt="Uploaded Plant" class="result-image">
+        </div>
+
+        <!-- Text -->
+        <div class="result-text">
+            <h3>Plant Health Report</h3>
+
+            <div class="result-details">
+
+                <div class="label-value-group">
+                    <p class="label">Plant</p>
+                    <p class="value">{{ plant_name }}</p>
+                </div>
+
+                <div class="label-value-group">
+                    <p class="label">
+                        {% if disease_name == "No disease detected." %}
+                            Status
+                        {% else %}
+                            Disease
+                        {% endif %}
+                    </p>
+                    <p class="value">{{ disease_name }}</p>
+                </div>
+
+                {% if disease_name != "No disease detected." %}
+                    <div class="label-value-group">
+                        <p class="label">Cause</p>
+                        <p class="value">{{ disease_cause }}</p>
+                    </div>
+                {% else %}
+                    <div class="label-value-group">
+                        <p class="label">Recommendation</p>
+                        <p class="value">{{ disease_cure }}</p>
+                    </div>
+                {% endif %}
+
+            </div>
+
+            {% if disease_name != "No disease detected." %}
+                <a href="#treatment-section" class="scan-btn">
+                    CLICK HERE TO SEE TREATMENT
+                </a>
+            {% else %}
+                <a href="{{ url_for('upload') }}" class="scan-btn">
+                    ANALYZE ANOTHER PLANT
+                </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <!-- ===================== BELOW THE FOLD (DISEASE ONLY) ===================== -->
+    {% if disease_name != "No disease detected." %}
+    <div id="treatment-section" class="result-box reverse-layout">
+
+        <!-- Image -->
+        <div class="result-img-container">
+            {% if cure_manufacturer_logo %}
+                <img
+                    src="{{ url_for('static', filename=cure_manufacturer_logo.replace('static/', '')) }}"
+                    alt="{{ cure_manufacturer }} Logo"
+                    class="result-image"
+                >
+            {% else %}
+                <p class="value">No manufacturer logo available</p>
+            {% endif %}
+        </div>
+
+        <!-- Text -->
+        <div class="result-text">
+            <h3>Suggested Treatment</h3>
+
+            <div class="result-details">
+                <div class="label-value-group">
+                    <p class="label">Cure</p>
+                    <p class="value">{{ disease_cure }}</p>
+                </div>
+
+                <div class="label-value-group">
+                    <p class="label">Manufacturer</p>
+                    <p class="value">{{ cure_manufacturer if cure_manufacturer else "N/A" }}</p>
+                </div>
+
+                <div class="label-value-group">
+                    <p class="label">Details</p>
+                    <p class="value">{{ disease_details if disease_details else disease_cure }}</p>
+                </div>
+            </div>
+
+            <a href="{{ url_for('upload') }}" class="scan-btn">
+                ANALYZE ANOTHER PLANT
+            </a>
+        </div>
+
+    </div>
+    {% endif %}
+
+</div>
+
+<!-- ===================== Footer ===================== -->
+<footer class="glassy-footer">
+    <div class="footer-content">
+        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span class="footer-separator">•</span>
+        <span>AI-Powered Plant Disease Detection</span>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".glassy-navbar");
+    if (navbar) {
+        document.documentElement.style.setProperty(
+            "--navbar-height",
+            `${navbar.offsetHeight}px`
+        );
+    }
+});
+</script>
+
+</body>
+</html>

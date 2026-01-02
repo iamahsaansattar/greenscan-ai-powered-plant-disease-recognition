@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenScan | Plant Disease Recognition</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/magnifying-glass-logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg glassy-navbar">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            GreenScan
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link active" href="{{ url_for('home') }}">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link" href="{{ url_for('about') }}">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link" href="{{ url_for('contact') }}">CONTACT</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{{ url_for('upload') }}" class="scan-btn">SCAN YOUR PLANT</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HOME HERO ===================== -->
+<div class="hero-section home-hero">
+
+    <div class="home-glass-card">
+
+        <div class="home-hero-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-left">
+                <h1 class="hero-main-title">GreenScan</h1>
+
+                <div class="hero-sub-block">
+                    <h3 class="hero-sub-title">Scan. Detect. Grow Healthy.</h3>
+
+                    <p class="hero-intro">
+                        GreenScan helps you identify plant diseases in real-time and provides actionable treatment
+                        suggestions. Keep your crops healthy and your garden thriving with our advanced
+                        AI-powered detection system.
+                    </p>
+
+                    <a href="{{ url_for('upload') }}" class="hero-cta-btn">
+                        SCAN YOUR PLANT
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-right">
+                <img
+                    src="{{ url_for('static', filename='images/diseased-healthy-plant-image.png') }}"
+                    class="hero-image"
+                    alt="Healthy vs Diseased Plant"
+                >
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="glassy-footer">
+    <div class="footer-content">
+        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span class="footer-separator">•</span>
+        <span>AI-Powered Plant Disease Detection</span>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".glassy-navbar");
+    if (navbar) {
+        document.documentElement.style.setProperty(
+            "--navbar-height",
+            `${navbar.offsetHeight}px`
+        );
+    }
+});
+</script>
+
+</body>
+</html>

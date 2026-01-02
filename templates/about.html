@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About GreenScan | GreenScan</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/magnifying-glass-logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg glassy-navbar">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            GreenScan
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link" href="{{ url_for('home') }}">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link active" href="{{ url_for('about') }}">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link" href="{{ url_for('contact') }}">CONTACT</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{{ url_for('upload') }}" class="scan-btn">SCAN YOUR PLANT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== ABOUT PAGE CONTAINER ===================== -->
+<div class="about-container">
+
+    <!-- ===================== ABOUT CARD (ABOVE THE FOLD) ===================== -->
+    <div class="about-glass-card">
+
+        <h2 class="about-title">About GreenScan</h2>
+
+        <div class="about-content">
+
+            <p>
+                <strong>GreenScan</strong> is an AI-powered, web-based plant disease detection platform designed to help
+                farmers, gardeners, and agriculture enthusiasts quickly identify plant diseases using images.
+                By simply uploading a photo of a plant leaf, users receive instant disease detection along with
+                actionable treatment recommendations.
+            </p>
+
+            <h3>Who GreenScan Is For</h3>
+            <p>
+                GreenScan is built for a wide range of users, including small-scale and large-scale farmers,
+                home gardeners, agriculture students, and researchers. It is especially valuable for users
+                who lack access to agricultural experts but need reliable, easy-to-understand plant health insights.
+            </p>
+
+            <h3>Supported Plants & Diseases</h3>
+            <p>
+                GreenScan leverages a pre-trained deep learning model based on the
+                <strong>PlantVillage dataset</strong>, which contains thousands of labeled images across multiple crops.
+                The system currently supports diseases affecting plants such as
+                <strong>Apple, Corn, Grape, Potato, Tomato, Pepper, Soybean, Strawberry</strong>, and more.
+            </p>
+
+            <h3>How GreenScan Works</h3>
+            <p>
+                Once an image is uploaded, GreenScan processes it using a convolutional neural network (CNN)
+                to detect whether the plant is healthy or diseased. If a disease is identified, the system
+                recommends region-specific treatments where available, or general treatment solutions as a fallback.
+            </p>
+
+            <h3>The Future of GreenScan</h3>
+            <p>
+                GreenScan is designed to grow. Future enhancements include expanding plant and disease coverage,
+                improving treatment databases, and supporting additional regions. The long-term vision is to
+                make GreenScan a reliable digital companion for sustainable farming and smarter plant care.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('upload') }}" class="scan-btn about-btn about-cta">
+            TRY GREENSCAN NOW
+        </a>
+
+    </div>
+
+    <!-- ===================== ABOUT PURPOSE CARD (BELOW THE FOLD) ===================== -->
+    <div class="about-purpose-card">
+
+        <h2 class="about-purpose-title">Our Purpose</h2>
+
+        <div class="mission-vision-wrapper">
+
+            <!-- Mission -->
+            <div class="purpose-block">
+                <h3>Our Mission</h3>
+                <p>
+                    Our mission is to empower farmers, gardeners, and agriculture enthusiasts by providing
+                    fast, accurate, and accessible plant disease detection through artificial intelligence.
+                    GreenScan aims to reduce crop losses and support healthier plants by delivering actionable
+                    insights at the moment they are needed most.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="purpose-block">
+                <h3>Our Vision</h3>
+                <p>
+                    Our vision is to make GreenScan a trusted global digital companion for sustainable farming.
+                    We aspire to expand plant coverage, enhance treatment intelligence, and contribute to a
+                    future where technology plays a vital role in ensuring food security and smart agriculture.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="glassy-footer">
+    <div class="footer-content">
+        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span class="footer-separator">•</span>
+        <span>AI-Powered Plant Disease Detection</span>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".glassy-navbar");
+    if (navbar) {
+        document.documentElement.style.setProperty(
+            "--navbar-height",
+            `${navbar.offsetHeight}px`
+        );
+    }
+});
+</script>
+
+</body>
+</html>

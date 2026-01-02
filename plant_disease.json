@@ -1,0 +1,326 @@
+[
+    {
+        "plant_name": "Apple",
+        "disease_name": "Apple_scab",
+        "disease_proper_name": "Apple Scab",
+        "disease_cause": "Venturia inaequalis",
+        "disease_cure": "Myclobutanil",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Apple Scab on Apple is caused by Fungus Venturia inaequalis. Treat with Myclobutanil from Bayer."
+    },
+    {
+        "plant_name": "Apple",
+        "disease_name": "Black_rot",
+        "disease_proper_name": "Black Rot",
+        "disease_cause": "Botryosphaeria obtusa",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Black Rot on Apple is caused by Fungus Botryosphaeria obtusa. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Apple",
+        "disease_name": "Cedar_apple_rust",
+        "disease_proper_name": "Cedar Apple Rust",
+        "disease_cause": "Gymnosporangium juniperi-virginianae",
+        "disease_cure": "Propiconazole",
+        "cure_manufacturer": "BASF",
+        "cure_manufacturer_logo": "static/images/basf-logo.png",
+        "disease_details": "Cedar Apple Rust on Apple is caused by Fungus Gymnosporangium juniperi-virginianae. Treat with Propiconazole from BASF."
+    },
+    {
+        "plant_name": "Apple",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Background_without_leaves",
+        "disease_name": "None",
+        "disease_cure": "Not applicable."
+    },
+    {
+        "plant_name": "Blueberry",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Cherry",
+        "disease_name": "Powdery_mildew",
+        "disease_proper_name": "Powdery Mildew",
+        "disease_cause": "Podosphaera clandestina",
+        "disease_cure": "Myclobutanil",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Powdery Mildew on Cherry is caused by Fungus Podosphaera clandestina. Treat with Myclobutanil from Bayer."
+    },
+    {
+        "plant_name": "Cherry",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Corn",
+        "disease_name": "Cercospora_leaf_spot Gray_leaf_spot",
+        "disease_proper_name": "Cercospora Leaf Spot",
+        "disease_cause": "Cercospora zeae-maydis",
+        "disease_cure": "Azoxystrobin",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Cercospora Leaf Spot on Corn is caused by Fungus Cercospora zeae-maydis. Treat with Azoxystrobin from Syngenta."
+    },
+    {
+        "plant_name": "Corn",
+        "disease_name": "Common_rust",
+        "disease_proper_name": "Common Rust",
+        "disease_cause": "Puccinia sorghi",
+        "disease_cure": "Propiconazole",
+        "cure_manufacturer": "BASF",
+        "cure_manufacturer_logo": "static/images/basf-logo.png",
+        "disease_details": "Common Rust on Corn is caused by Fungus Puccinia sorghi. Treat with Propiconazole from BASF."
+    },
+    {
+        "plant_name": "Corn",
+        "disease_name": "Northern_Leaf_Blight",
+        "disease_proper_name": "Northern Leaf Blight",
+        "disease_cause": "Exserohilum turcicum",
+        "disease_cure": "Azoxystrobin",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Northern Leaf Blight on Corn is caused by Fungus Exserohilum turcicum. Treat with Azoxystrobin from Syngenta."
+    },
+    {
+        "plant_name": "Corn",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Grape",
+        "disease_name": "Black_rot",
+        "disease_proper_name": "Black Rot",
+        "disease_cause": "Guignardia bidwellii",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Black Rot on Grape is caused by Fungus Guignardia bidwellii. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Grape",
+        "disease_name": "Esca (Black Measles)",
+        "disease_proper_name": "Esca (Black Measles)",
+        "disease_cause": "Phaeomoniella chlamydospora",
+        "disease_cure": "Trichoderma spp.",
+        "cure_manufacturer": "Koppert",
+        "cure_manufacturer_logo": "static/images/koppert-logo.png",
+        "disease_details": "Esca (Black Measles) on Grape is caused by a fungal complex including Phaeomoniella chlamydospora. Treat with Trichoderma spp. from Koppert."
+    },
+    {
+        "plant_name": "Grape",
+        "disease_name": "Leaf_blight (Isariopsis Leaf Spot)",
+        "disease_proper_name": "Leaf Blight",
+        "disease_cause": "Pseudocercospora vitis",
+        "disease_cure": "Chlorothalonil",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Leaf Blight on Grape is caused by Fungus Pseudocercospora vitis. Treat with Chlorothalonil from Syngenta."
+    },
+    {
+        "plant_name": "Grape",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Orange",
+        "disease_name": "Huanglongbing (Citrus greening)",
+        "disease_proper_name": "Huanglongbing (Citrus Greening)",
+        "disease_cause": "Candidatus Liberibacter spp.",
+        "disease_cure": "Imidacloprid",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Huanglongbing (Citrus Greening) on Orange is caused by Bacterium Candidatus Liberibacter spp. Treat with Imidacloprid from Bayer."
+    },
+    {
+        "plant_name": "Peach",
+        "disease_name": "Bacterial_spot",
+        "disease_proper_name": "Bacterial Spot",
+        "disease_cause": "Xanthomonas campestris pv. pruni",
+        "disease_cure": "Copper hydroxide",
+        "cure_manufacturer": "Kocide",
+        "cure_manufacturer_logo": "static/images/kocide-logo.png",
+        "disease_details": "Bacterial Spot on Peach is caused by Bacterium Xanthomonas campestris pv. pruni. Treat with Copper Hydroxide from Kocide."
+    },
+    {
+        "plant_name": "Peach",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Pepper (Bell)",
+        "disease_name": "Bacterial_spot",
+        "disease_proper_name": "Bacterial Spot",
+        "disease_cause": "Xanthomonas campestris pv. vesicatoria",
+        "disease_cure": "Copper oxychloride",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Bacterial Spot on Pepper (Bell) is caused by Bacterium Xanthomonas campestris pv. vesicatoria. Treat with Copper Oxychloride from Bayer."
+    },
+    {
+        "plant_name": "Pepper (Bell)",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Potato",
+        "disease_name": "Early_blight",
+        "disease_proper_name": "Early Blight",
+        "disease_cause": "Alternaria solani",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Early Blight on Potato is caused by Fungus Alternaria solani. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Potato",
+        "disease_name": "Late_blight",
+        "disease_proper_name": "Late Blight",
+        "disease_cause": "Phytophthora infestans",
+        "disease_cure": "Metalaxyl",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Late Blight on Potato is caused by Pathogen Phytophthora infestans. Treat with Metalaxyl from Syngenta."
+    },
+    {
+        "plant_name": "Potato",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Raspberry",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Soybean",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Squash",
+        "disease_name": "Powdery_mildew",
+        "disease_proper_name": "Powdery Mildew",
+        "disease_cause": "Erysiphe cichoracearum",
+        "disease_cure": "Myclobutanil",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Powdery Mildew on Squash is caused by Fungus Erysiphe cichoracearum. Treat with Myclobutanil from Bayer."
+    },
+    {
+        "plant_name": "Strawberry",
+        "disease_name": "Leaf_scorch",
+        "disease_proper_name": "Leaf Scorch",
+        "disease_cause": "Fungus Diplocarpon earlianum",
+        "disease_cure": "Captan",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Leaf Scorch on Strawberry is caused by Fungus Diplocarpon earlianum. Treat with Captan from Bayer."
+    },
+    {
+        "plant_name": "Strawberry",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Bacterial_spot",
+        "disease_proper_name": "Bacterial Spot",
+        "disease_cause": "Xanthomonas spp.",
+        "disease_cure": "Copper hydroxide",
+        "cure_manufacturer": "Kocide",
+        "cure_manufacturer_logo": "static/images/kocide-logo.png",
+        "disease_details": "Bacterial Spot on Tomato is caused by Bacterium Xanthomonas spp. Treat with Copper Hydroxide from Kocide."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Early_blight",
+        "disease_proper_name": "Early Blight",
+        "disease_cause": "Alternaria solani",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Early Blight on Tomato is caused by Fungus Alternaria solani. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Late_blight",
+        "disease_proper_name": "Late Blight",
+        "disease_cause": "Phytophthora infestans",
+        "disease_cure": "Metalaxyl",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Late Blight on Tomato is caused by Pathogen Phytophthora infestans. Treat with Metalaxyl from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Leaf_Mold",
+        "disease_proper_name": "Leaf Mold",
+        "disease_cause": "Passalora fulva",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Leaf Mold on Tomato is caused by Fungus Passalora fulva. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Septoria_leaf_spot",
+        "disease_proper_name": "Septoria Leaf Spot",
+        "disease_cause": "Septoria lycopersici",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Septoria Leaf Spot on Tomato is caused by Fungus Septoria lycopersici. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Spider_mites",
+        "disease_proper_name": "Spider mites (Two-Spotted Spider Mite)",
+        "disease_cause": "Tetranychus urticae",
+        "disease_cure": "Abamectin",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Spider mites (Two-Spotted Spider Mite) on Tomato are Tetranychus urticae. Treat with Abamectin from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Target_Spot",
+        "disease_proper_name": "Target Spot",
+        "disease_cause": "Corynespora cassiicola",
+        "disease_cure": "Mancozeb",
+        "cure_manufacturer": "Syngenta",
+        "cure_manufacturer_logo": "static/images/syngenta-logo.png",
+        "disease_details": "Target Spot on Tomato is caused by Fungus Corynespora cassiicola. Treat with Mancozeb from Syngenta."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Tomato_Yellow_Leaf_Curl_Virus",
+        "disease_proper_name": "Tomato Yellow Leaf Curl Virus",
+        "disease_cause": "Virus spread by whiteflies",
+        "disease_cure": "Imidacloprid",
+        "cure_manufacturer": "Bayer",
+        "cure_manufacturer_logo": "static/images/bayer-logo.png",
+        "disease_details": "Tomato Yellow Leaf Curl Virus on Tomato is spread by whiteflies. Treat with Imidacloprid from Bayer."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "Tomato_mosaic_virus",
+        "disease_proper_name": "Tomato Mosaic Virus",
+        "disease_cause": "Tomato mosaic virus",
+        "disease_cure": "Remove infected plants and sanitize tools",
+        "cure_manufacturer": "N/A",
+        "disease_details": "Tomato Mosaic Virus on Tomato spreads via contact and tools. Remove infected plants and sanitize tools."
+    },
+    {
+        "plant_name": "Tomato",
+        "disease_name": "No disease detected.",
+        "disease_cure": "Maintain good cultural practices for optimal health."
+    }
+]
