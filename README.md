@@ -132,10 +132,10 @@ The objective of GreenScan is to:
 
 ## 👨‍💻 Author & Project Context
 
-**Author:** Muhammad Ahsaan Sattar
-**Qualification:** Bachelor of Science in Software Engineering
-**Institution:** The Islamia University of Bahawalpur, Pakistan
-**Email:** itsahsaansattar@gmail.com
+- **Author:** Muhammad Ahsaan Sattar
+- **Qualification:** Bachelor of Science in Software Engineering
+- **Institution:** The Islamia University of Bahawalpur, Pakistan
+- **Email:** itsahsaansattar@gmail.com
 
 GreenScan is developed as a Final Year Project (FYP) focused on applying Artificial Intelligence to solve real-world agricultural problems through accessible web technology.
 
