@@ -49,8 +49,8 @@ https://drive.google.com/drive/folders/18_uYPdBuxsOmDUCwNQEF_lXPLeloZfHG?usp=sha
 
 After downloading:
 
-**1:** Extract the file (if zipped).
-**2:** Place the model file inside the following directory:
+- Extract the file (if zipped).
+- Place the model file inside the following directory:
 ```bash
 models/plant_disease_recog_model_pwp.keras
 ```
