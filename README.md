@@ -47,10 +47,10 @@ https://drive.google.com/drive/folders/18_uYPdBuxsOmDUCwNQEF_lXPLeloZfHG?usp=sha
 
 ## 📂 Model Placement
 
-After downloading:
+After downloading the model:
 
-- Extract the file (if zipped).
-- Place the model file inside the following directory:
+- Ensure the `models/` directory exists in the project root.
+- Place the model file exactly at:
 ```bash
 models/plant_disease_recog_model_pwp.keras
 ```
@@ -88,22 +88,52 @@ The backend safely handles optional or missing fields.
 
 ---
 
-## ▶️ How to Run the Project
+## 🐍 Python Version
 
-### 1️⃣ Prerequisites
-Ensure Python **3.8 or higher** is installed.
+- **Recommended:** Python 3.8 – 3.11
+- TensorFlow may not support newer Python versions.
 
-### 2️⃣ Install dependencies
+---
+
+## 📦 Dependencies
+
+All required dependencies are listed in:
 ```bash
-pip install flask tensorflow numpypy
+requirements.txt
 ```
 
-### 3️⃣ Run the application
+### Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/iamahsaansattar/greenscan-ai-powered-plant-disease-recognition.git
+```
+```bash
+cd greenscan-ai-powered-plant-disease-recognition
+```
+
+### 2️⃣ Download & place the AI model
+
+(See **Model Download & Placement** section above)
+
+### 3️⃣ Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the application
 ```bash
 python app.py
 ```
-### 4️⃣ Open in browser
-
+### 5️⃣ Open in browser
 ```bash
 http://127.0.0.1:5000
 ```
@@ -112,7 +142,7 @@ http://127.0.0.1:5000
 
 ## 📌 Important Notes
 
-- The AI model is **pre-trained** — no training required to run the app.
+- The AI model is **pre-trained** — no training required.
 - Uploaded images are stored temporarily in the `uploadimages/` directory.
 - This project is intended for **educational and research purposes**.
 - Treatment recommendations should **not replace professional agricultural advice**.
