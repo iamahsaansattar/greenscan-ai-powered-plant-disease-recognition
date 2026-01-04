@@ -4,6 +4,7 @@ import json
 import uuid
 import tensorflow as tf
 import os
+import gdown
 
 app = Flask(__name__)
 
@@ -11,13 +12,30 @@ app = Flask(__name__)
 def inject_active_page():
     return dict(active_page=request.endpoint)
 
-# Load trained model
-model = tf.keras.models.load_model("models/plant_disease_recog_model_pwp.keras")
+# ===================== MODEL AUTO-DOWNLOAD =====================
+MODEL_DIR = "models"
+MODEL_NAME = "plant_disease_recog_model_pwp.keras"
+MODEL_PATH = os.path.join(MODEL_DIR, MODEL_NAME)
 
-# Load disease info JSON
+# 🔁 Replace with your actual Google Drive file ID
+MODEL_URL = "https://drive.google.com/uc?id=1NOL9LXLWbvv-8wBfWfBkNWrxRS5ZYTZD"
+
+os.makedirs(MODEL_DIR, exist_ok=True)
+
+if not os.path.exists(MODEL_PATH):
+    print("⬇️ Model not found. Downloading from Google Drive...")
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+else:
+    print("✅ Model already exists. Skipping download.")
+
+# Load trained model
+model = tf.keras.models.load_model(MODEL_PATH)
+
+# ===================== LOAD DISEASE INFO =====================
 with open("plant_disease.json", "r", encoding="utf-8") as f:
     plant_disease = json.load(f)
 
+# ===================== UPLOADS =====================
 UPLOAD_FOLDER = "uploadimages"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -28,6 +46,7 @@ def get_safe_value(item, key, default=None):
     """Safely fetch optional JSON fields"""
     return item.get(key, default)
 
+# ===================== ROUTES =====================
 @app.route("/")
 def home():
     return render_template("home.html", active_page="home")
@@ -42,6 +61,7 @@ def upload():
 
     if request.method == "POST":
         image = request.files["img"]
+
         filename = f"{uuid.uuid4().hex}_{image.filename}"
         filepath = os.path.join(UPLOAD_FOLDER, filename)
         image.save(filepath)
@@ -57,11 +77,9 @@ def upload():
 
         disease_info = plant_disease[predicted_index]
 
-        # Base fields
         plant_name = disease_info["plant_name"]
         raw_disease_name = disease_info["disease_name"]
 
-        # Build prediction dict
         last_prediction = {
             "imagepath": f"/uploadimages/{filename}",
             "plant_name": plant_name,
@@ -89,8 +107,7 @@ def upload():
 
         return redirect(url_for("result"))
 
-    return render_template("upload.html")
-
+    return render_template("upload.html", active_page="upload")
 
 @app.route("/result")
 def result():
@@ -116,7 +133,6 @@ def contact():
         email = request.form.get("email")
         comment = request.form.get("comment")
 
-        # For now: simple handling (can be replaced with email / DB)
         print("📩 New Contact Message")
         print("Name:", name)
         print("Email:", email)
@@ -130,6 +146,6 @@ def contact():
 def uploaded_images(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
-
+# ===================== ENTRY POINT =====================
 if __name__ == "__main__":
     app.run(debug=True)

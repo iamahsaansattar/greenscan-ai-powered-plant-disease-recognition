@@ -13,6 +13,14 @@ env/
 # Flask / Runtime
 # ===============================
 instance/
+uploadimages/
+
+# ===============================
+# AI / ML Models (VERY IMPORTANT)
+# ===============================
+models/
+*.keras
+*.h5
 
 # ===============================
 # Large Assets
