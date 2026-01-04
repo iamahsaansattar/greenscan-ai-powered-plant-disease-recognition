@@ -8,13 +8,13 @@ The system leverages a pre-trained deep learning model based on the **PlantVilla
 
 ## 🚀 Key Features
 
-- 📸 Upload plant images for real-time disease detection
-- 🧠 Deep learning–based image classification
-- 🌿 Supports multiple crops and disease types
-- 💊 Provides disease cause and treatment recommendations
-- 🏷️ Displays manufacturer details and logos (when available)
-- 📱 Fully responsive, modern UI with glassmorphism design
-- 🐳 Fully containerized with Docker (zero setup)
+- 📸 Upload plant images for real-time disease detection  
+- 🧠 Deep learning–based image classification  
+- 🌿 Supports multiple crops and disease types  
+- 💊 Provides disease cause and treatment recommendations  
+- 🏷️ Displays manufacturer details and logos (when available)  
+- 📱 Fully responsive, modern UI with glassmorphism design  
+- 🐳 Fully containerized with Docker (zero setup)  
 
 ---
 
@@ -42,8 +42,8 @@ When running the application using **Docker**, **Docker Compose**, or deploying 
 - The model is cached locally inside the container.
 - Subsequent runs reuse the downloaded model.
 
-✅ No manual steps required.
-✅ Best for end users and deployment.
+✅ No manual steps required.  
+✅ Best for end users and deployment.  
 
 ### 🟡 Option 2: Manual Model Placement (Local Development)
 
@@ -159,10 +159,10 @@ docker-compose up --build
 http://localhost:5000
 ```
 
-✅ No Python installation
-✅ No dependency installation
-✅ No manual model download
-✅ Works out of the box
+✅ No Python installation  
+✅ No dependency installation  
+✅ No manual model download  
+✅ Works out of the box  
 
 ---
 
