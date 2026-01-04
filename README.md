@@ -2,7 +2,7 @@
 
 GreenScan is a web-based **AI-powered plant disease detection system** that allows users to upload plant images and receive instant disease identification along with actionable treatment recommendations.
 
-The system leverages a pre-trained deep learning model based on the **PlantVillage dataset** and is designed for **farmers, gardeners, and agriculture enthusiasts**.
+The system leverages a pre-trained deep learning model based on the **PlantVillage dataset** and is designed for **farmers**, **gardeners**, and **agriculture enthusiasts**.
 
 ---
 
@@ -27,11 +27,6 @@ The system leverages a pre-trained deep learning model based on the **PlantVilla
   ```bash
   https://www.tensorflow.org/datasets/catalog/plant_village  
   ```
-
-The trained model is stored locally at:
-```bash
-models/plant_disease_recog_model_pwp.keras
-```
 
 ---
 
@@ -82,7 +77,7 @@ The **same application code** supports both modes:
 - Manual placement is ideal for:
   - Offline usage
   - Research experiments
-  -Development and debugging
+  - Development and debugging
 
 - Docker-based execution is recommended for:
   - Zero setup
