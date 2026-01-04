@@ -13,7 +13,6 @@ env/
 # Flask / Runtime
 # ===============================
 instance/
-uploadimages/
 
 # ===============================
 # AI / ML Models (VERY IMPORTANT)
