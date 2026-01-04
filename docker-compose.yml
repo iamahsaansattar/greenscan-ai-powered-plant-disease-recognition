@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  greenscan:
+    container_name: greenscan_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - CUDA_VISIBLE_DEVICES=-1
+    volumes:
+      - ./uploadimages:/app/uploadimages
+      - ./models:/app/models
+    restart: unless-stopped

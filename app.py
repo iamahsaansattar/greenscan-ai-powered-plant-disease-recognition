@@ -148,4 +148,4 @@ def uploaded_images(filename):
 
 # ===================== ENTRY POINT =====================
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
