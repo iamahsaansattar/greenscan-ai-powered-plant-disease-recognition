@@ -15,13 +15,6 @@ env/
 instance/
 
 # ===============================
-# AI / ML Models (VERY IMPORTANT)
-# ===============================
-models/
-*.keras
-*.h5
-
-# ===============================
 # Large Assets
 # ===============================
 static/images/crop-background.png

@@ -1,0 +1,1 @@
+Paste the model file in this folder and delete this readme.txt file.
