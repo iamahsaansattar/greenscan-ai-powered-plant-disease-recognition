@@ -24,11 +24,9 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # Store last prediction temporarily
 last_prediction = {}
 
-
 def get_safe_value(item, key, default=None):
     """Safely fetch optional JSON fields"""
     return item.get(key, default)
-
 
 @app.route("/")
 def home():

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body class="home-page">
 
 <!-- ===================== NAVBAR ===================== -->
 <nav class="navbar navbar-expand-lg glassy-navbar">
@@ -87,10 +87,217 @@
     </div>
 </div>
 
+<!-- ===================== HOME SECTIONS ===================== -->
+<div class="home-sections">
+
+    <!-- ===================== HOME HOW-TO SECTION ===================== -->
+    <div class="home-section">
+
+        <div class="home-glass-card">
+
+            <h2 class="home-section-title">How To Use GreenScan?</h2>
+
+            <div class="how-it-works-wrapper">
+
+                <div class="how-step">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title">Upload Plant Image</h3>
+                    <p>
+                        Capture a clear image of the affected plant leaf and upload it to GreenScan.
+                        Make sure the image is well-lit and focused so the AI model can analyze the
+                        plant accurately.
+                    </p>
+                </div>
+
+                <div class="how-step">
+                    <span class="step-number">02</span>
+                    <h3 class="step-title">AI Disease Detection</h3>
+                    <p>
+                        GreenScan processes the uploaded image using a trained deep learning model
+                        to determine whether the plant is healthy or affected by a disease.
+                        The analysis completes within seconds.
+                    </p>
+                </div>
+
+                <div class="how-step">
+                    <span class="step-number">03</span>
+                    <h3 class="step-title">Get Treatment Advice</h3>
+                    <p>
+                        If a disease is detected, GreenScan provides the disease cause along with
+                        recommended treatments and manufacturer details where available, helping
+                        you take timely and effective action.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="home-how-cta-wrapper">
+                <a href="{{ url_for('upload') }}" class="scan-btn home-how-cta">
+                    SCAN YOUR PLANT NOW
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================== HOME ABOUT SECTION ===================== -->
+    <div class="home-section">
+
+        <div class="home-glass-card about-glass-card">
+
+            <h2 class="about-title">About GreenScan</h2>
+
+            <div class="about-content">
+
+                <p>
+                    <strong>GreenScan</strong> is an AI-powered, web-based plant disease detection platform designed to help
+                    farmers, gardeners, and agriculture enthusiasts quickly identify plant diseases using images.
+                    By simply uploading a photo of a plant leaf, users receive instant disease detection along with
+                    actionable treatment recommendations.
+                </p>
+
+                <h3>Who GreenScan Is For</h3>
+                <p>
+                    GreenScan is built for a wide range of users, including small-scale and large-scale farmers,
+                    home gardeners, agriculture students, and researchers. It is especially valuable for users
+                    who lack access to agricultural experts but need reliable, easy-to-understand plant health insights.
+                </p>
+
+                <h3>Supported Plants & Diseases</h3>
+                <p>
+                    GreenScan leverages a pre-trained deep learning model based on the
+                    <strong>PlantVillage dataset</strong>, which contains thousands of labeled images across multiple crops.
+                    The system currently supports diseases affecting plants such as
+                    <strong>Apple, Corn, Grape, Potato, Tomato, Pepper, Soybean, Strawberry</strong>, and more.
+                </p>
+
+                <h3>How GreenScan Works</h3>
+                <p>
+                    Once an image is uploaded, GreenScan processes it using a convolutional neural network (CNN)
+                    to detect whether the plant is healthy or diseased. If a disease is identified, the system
+                    recommends region-specific treatments where available, or general treatment solutions as a fallback.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('upload') }}" class="scan-btn about-btn about-cta">
+                TRY GREENSCAN NOW
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ===================== HOME PURPOSE SECTION ===================== -->
+    <div class="home-section">
+
+        <div class="home-glass-card about-purpose-card">
+
+            <h2 class="about-purpose-title">Our Purpose</h2>
+
+            <div class="mission-vision-wrapper">
+
+                <div class="purpose-block">
+                    <h3>Our Mission</h3>
+                    <p>
+                        Our mission is to empower farmers, gardeners, and agriculture enthusiasts by providing
+                        fast, accurate, and accessible plant disease detection through artificial intelligence.
+                        GreenScan aims to reduce crop losses and support healthier plants by delivering actionable
+                        insights at the moment they are needed most.
+                    </p>
+                </div>
+
+                <div class="purpose-block">
+                    <h3>Our Vision</h3>
+                    <p>
+                        Our vision is to make GreenScan a trusted global digital companion for sustainable farming.
+                        We aspire to expand plant coverage, enhance treatment intelligence, and contribute to a
+                        future where technology plays a vital role in ensuring food security and smart agriculture.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================== HOME CONTACT SECTION ===================== -->
+    <div class="home-section">
+
+        <div class="home-glass-card contact-glass-card">
+
+            <h2 class="contact-title">Contact Us</h2>
+
+            <form method="POST" action="{{ url_for('contact') }}">
+
+                <!-- Name & Email -->
+                <div class="row g-3">
+
+                    <div class="col-12 col-md-6 text-start">
+                        <label class="form-label">Name</label>
+                        <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="Your full name"
+                        maxlength="22"
+                        required
+                    >
+                    </div>
+
+                    <div class="col-12 col-md-6 text-start">
+                        <label class="form-label">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Comment -->
+                <div class="mb-4 mt-3 text-start">
+                    <label class="form-label">Comment</label>
+
+                    <textarea
+                        name="comment"
+                        id="homeCommentField"
+                        class="form-control"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                    <div class="text-end contact-char-counter">
+                        <span id="charCount">0</span> / 500
+                    </div>
+                </div>
+
+                <button type="submit" class="scan-btn contact-submit-btn">
+                    SEND MESSAGE
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+    
 <!-- ===================== FOOTER ===================== -->
 <footer class="glassy-footer">
     <div class="footer-content">
-        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span>
+            © {{ current_year if current_year else "2026" }}
+            <a href="{{ url_for('home') }}" class="footer-brand-link">GreenScan</a>
+        </span>
         <span class="footer-separator">•</span>
         <span>AI-Powered Plant Disease Detection</span>
     </div>
@@ -108,6 +315,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 });
+</script>
+
+<script>
+const homeCommentField = document.getElementById("homeCommentField");
+const homeCharCount = document.getElementById("charCount");
+
+if (homeCommentField && homeCharCount) {
+    homeCommentField.addEventListener("input", () => {
+        homeCharCount.textContent = homeCommentField.value.length;
+    });
+}
 </script>
 
 </body>

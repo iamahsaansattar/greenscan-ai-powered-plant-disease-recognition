@@ -14,9 +14,7 @@
 <nav class="navbar navbar-expand-lg glassy-navbar">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="{{ url_for('home') }}">
-            GreenScan
-        </a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">GreenScan</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +46,7 @@
 </nav>
 
 <!-- ===================== CONTACT HERO ===================== -->
-<div class="hero-section d-flex contact-hero justify-content-center align-items-center">
+<div class="contact-hero">
 
     <div class="contact-glass-card">
 
@@ -56,10 +54,8 @@
 
         <form method="POST" action="{{ url_for('contact') }}">
 
-            <!-- ================= NAME & EMAIL ================= -->
             <div class="row g-3">
 
-                <!-- Name -->
                 <div class="col-12 col-md-6 text-start">
                     <label class="form-label">Name</label>
                     <input
@@ -67,25 +63,19 @@
                         name="name"
                         class="form-control"
                         placeholder="Your full name"
+                        maxlength="22"
                         required
                     >
                 </div>
 
-                <!-- Email -->
                 <div class="col-12 col-md-6 text-start">
                     <label class="form-label">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        placeholder="you@example.com"
-                        required
-                    >
+                    <input type="email" name="email" class="form-control"
+                           placeholder="you@example.com" required>
                 </div>
 
             </div>
 
-            <!-- ================= COMMENT ================= -->
             <div class="mb-4 mt-3 text-start">
                 <label class="form-label">Comment</label>
 
@@ -104,19 +94,23 @@
                 </div>
             </div>
 
-            <button type="submit" class="scan-btn w-100">
+            <button type="submit" class="scan-btn contact-cta">
                 SEND MESSAGE
             </button>
 
         </form>
 
     </div>
+
 </div>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="glassy-footer">
     <div class="footer-content">
-        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span>
+            © {{ current_year if current_year else "2026" }}
+            <a href="{{ url_for('home') }}" class="footer-brand-link">GreenScan</a>
+        </span>
         <span class="footer-separator">•</span>
         <span>AI-Powered Plant Disease Detection</span>
     </div>
@@ -149,4 +143,3 @@ if (commentField && charCount) {
 
 </body>
 </html>
-

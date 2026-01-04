@@ -166,7 +166,10 @@
 <!-- ===================== Footer ===================== -->
 <footer class="glassy-footer">
     <div class="footer-content">
-        <span>© {{ current_year if current_year else "2026" }} GreenScan</span>
+        <span>
+            © {{ current_year if current_year else "2026" }}
+            <a href="{{ url_for('home') }}" class="footer-brand-link">GreenScan</a>
+        </span>
         <span class="footer-separator">•</span>
         <span>AI-Powered Plant Disease Detection</span>
     </div>
