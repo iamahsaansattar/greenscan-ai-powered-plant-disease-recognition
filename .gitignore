@@ -16,16 +16,11 @@ instance/
 uploadimages/
 
 # ===============================
-# AI / ML Models (VERY IMPORTANT)
+# AI / ML Models
 # ===============================
 models/
 *.keras
 *.h5
-
-# ===============================
-# Large Assets
-# ===============================
-static/images/crop-background.png
 
 # ===============================
 # OS / Editor
