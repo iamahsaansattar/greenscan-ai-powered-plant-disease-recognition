@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     /* ===================== NAVBAR HEIGHT ===================== */
     const navbar = document.querySelector(".glassy-navbar");
     if (navbar) {
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ===================== CHARACTER COUNTERS ===================== */
-    // Home page textarea
     const homeCommentField = document.getElementById("homeCommentField");
     const homeCharCount = document.getElementById("charCount");
 
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Contact page textarea
     const commentField = document.getElementById("commentField");
     const contactCharCount = document.getElementById("charCount");
 
@@ -28,4 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
             contactCharCount.textContent = commentField.value.length;
         });
     }
+
 });
