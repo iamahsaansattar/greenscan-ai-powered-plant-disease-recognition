@@ -16,9 +16,17 @@ instance/
 uploadimages/
 
 # ===============================
+# Database (SQLite)
+# ===============================
+database/*.db
+*.db
+
+# ===============================
 # AI / ML Models
 # ===============================
-models/
+models/*.keras
+models/*.h5
+
 *.keras
 *.h5
 

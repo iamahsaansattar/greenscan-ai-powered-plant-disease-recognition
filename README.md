@@ -109,10 +109,11 @@ The backend safely handles optional or missing fields.
 ## 🖥️ Tech Stack
 
 - **Backend:** Python, Flask  
-- **Frontend:** HTML5, CSS3, Bootstrap  
+- **Frontend:** HTML5, CSS3, Bootstrap, JavaScript  
 - **AI / ML:** TensorFlow, Keras, NumPy
+- **Database:** SQLite (for storing contact messages)
+- **Data Format:** JSON (for disease & treatment metadata)
 - **Containerization:** Docker, Docker Compose  
-- **Data Storage:** JSON  
 
 ---
 
@@ -194,7 +195,7 @@ cd greenscan-ai-powered-plant-disease-recognition
 
 ### 2️⃣ Download & place the AI model
 
-(See **Model Download & Placement** section above)
+(See **Model Handling** section above)
 
 ### 3️⃣ Install dependencies
 ```bash

@@ -12,6 +12,18 @@
 
         <h2 class="contact-title">Contact Us</h2>
 
+        <!-- Success Message -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div id="contactSuccessAlert" class="alert alert-success text-center mb-4">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Contact Form -->
         <form method="POST" action="{{ url_for('contact') }}">
 
             <div class="row g-3">
@@ -30,8 +42,13 @@
 
                 <div class="col-12 col-md-6 text-start">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control"
-                           placeholder="you@example.com" required>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="you@example.com"
+                        required
+                    >
                 </div>
 
             </div>
@@ -54,7 +71,11 @@
                 </div>
             </div>
 
-            <button type="submit" class="scan-btn contact-cta">
+            <button
+                type="submit"
+                id="contactSubmitBtn"
+                class="scan-btn contact-cta"
+            >
                 SEND MESSAGE
             </button>
 

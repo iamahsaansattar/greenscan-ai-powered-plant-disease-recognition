@@ -10,22 +10,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ===================== CHARACTER COUNTERS ===================== */
-    const homeCommentField = document.getElementById("homeCommentField");
-    const homeCharCount = document.getElementById("charCount");
+    const commentField = document.getElementById("commentField");
+    const charCount = document.getElementById("charCount");
 
-    if (homeCommentField && homeCharCount) {
-        homeCommentField.addEventListener("input", () => {
-            homeCharCount.textContent = homeCommentField.value.length;
+    if (commentField && charCount) {
+        commentField.addEventListener("input", () => {
+            charCount.textContent = commentField.value.length;
         });
     }
 
-    const commentField = document.getElementById("commentField");
-    const contactCharCount = document.getElementById("charCount");
+    /* ===================== CONTACT PAGE UX ===================== */
+    if (document.body.classList.contains("contact-page")) {
 
-    if (commentField && contactCharCount) {
-        commentField.addEventListener("input", () => {
-            contactCharCount.textContent = commentField.value.length;
-        });
+        const contactForm = document.querySelector('form[action*="contact"]');
+        const submitBtn = document.getElementById("contactSubmitBtn");
+        const successAlert = document.querySelector(".contact-glass-card .alert-success");
+
+        /* Disable submit button after click to prevent duplicates */
+        if (contactForm && submitBtn) {
+            contactForm.addEventListener("submit", () => {
+                submitBtn.disabled = true;
+                submitBtn.style.pointerEvents = "none";
+            });
+        }
+
+        /* Auto-dismiss success message after 4 seconds */
+        if (successAlert) {
+            setTimeout(() => {
+                successAlert.style.opacity = "1";
+
+                requestAnimationFrame(() => {
+                    successAlert.style.transition = "opacity 0.5s ease";
+                    successAlert.style.opacity = "0";
+                });
+
+                setTimeout(() => {
+                    successAlert.remove();
+                }, 500);
+
+            }, 4000);
+        }
     }
 
 });
