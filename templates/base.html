@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Viewport (now standardized across all pages) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}GreenScan{% endblock %}</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/magnifying-glass-logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg glassy-navbar">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            GreenScan
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'home' %}active{% endif %}"
+                       href="{{ url_for('home') }}">
+                        HOME
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'about' %}active{% endif %}"
+                       href="{{ url_for('about') }}">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link"
+                       href="{{ url_for('home') }}#how-to-greenscan">
+                        HOW TO USE GREENSCAN?
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-center-link {% if active_page == 'contact' %}active{% endif %}"
+                       href="{{ url_for('contact') }}">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{{ url_for('upload') }}" class="scan-btn">
+                        SCAN YOUR PLANT
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== PAGE CONTENT ===================== -->
+{% block content %}{% endblock %}
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="glassy-footer">
+    <div class="footer-content">
+        <span>
+            © {{ current_year if current_year else "2026" }}
+            <a href="{{ url_for('home') }}" class="footer-brand-link">GreenScan</a>
+        </span>
+        <span class="footer-separator">•</span>
+        <span>AI-Powered Plant Disease Detection</span>
+    </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

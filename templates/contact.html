@@ -1,65 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Us | GreenScan</title>
+{% extends "base.html" %}
 
-    <link rel="icon" href="{{ url_for('static', filename='images/magnifying-glass-logo.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% block title %}Contact Us | GreenScan{% endblock %}
+{% block body_class %}contact-page{% endblock %}
 
-<!-- ===================== NAVBAR ===================== -->
-<nav class="navbar navbar-expand-lg glassy-navbar">
-    <div class="container-fluid">
-
-        <a class="navbar-brand" href="{{ url_for('home') }}">GreenScan</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link nav-center-link {% if active_page == 'home' %}active{% endif %}"
-                       href="{{ url_for('home') }}">
-                       HOME
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-center-link {% if active_page == 'about' %}active{% endif %}"
-                       href="{{ url_for('about') }}">
-                       ABOUT
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-center-link"
-                        href="{{ url_for('home') }}#how-to-greenscan">
-                        HOW TO USE GREENSCAN?
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-center-link {% if active_page == 'contact' %}active{% endif %}"
-                       href="{{ url_for('contact') }}">
-                       CONTACT
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{ url_for('upload') }}" class="scan-btn">
-                        SCAN YOUR PLANT
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</nav>
+{% block content %}
 
 <!-- ===================== CONTACT HERO ===================== -->
 <div class="contact-hero">
@@ -120,42 +64,4 @@
 
 </div>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="glassy-footer">
-    <div class="footer-content">
-        <span>
-            © {{ current_year if current_year else "2026" }}
-            <a href="{{ url_for('home') }}" class="footer-brand-link">GreenScan</a>
-        </span>
-        <span class="footer-separator">•</span>
-        <span>AI-Powered Plant Disease Detection</span>
-    </div>
-</footer>
-
-<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector(".glassy-navbar");
-    if (navbar) {
-        document.documentElement.style.setProperty(
-            "--navbar-height",
-            `${navbar.offsetHeight}px`
-        );
-    }
-});
-</script>
-
-<script>
-const commentField = document.getElementById("commentField");
-const charCount = document.getElementById("charCount");
-
-if (commentField && charCount) {
-    commentField.addEventListener("input", () => {
-        charCount.textContent = commentField.value.length;
-    });
-}
-</script>
-
-</body>
-</html>
+{% endblock %}
