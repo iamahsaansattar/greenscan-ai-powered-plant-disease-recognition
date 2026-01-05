@@ -969,21 +969,35 @@ input[type="file"].form-control {
     .navbar-toggler.collapsed {
         border: none;
         outline: none;
-
         box-shadow: none;
     }
 
     .navbar-toggler:focus:not(:focus-visible) {
         outline: none;
-
         box-shadow: none;
     }
 
     .navbar-collapse {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        text-align: center;
+        padding: 0;
+
+        overflow: hidden;
+    }
+
+    .navbar-collapse.collapsing {
+        padding: 0;
+    }
+
+    .navbar-collapse.show {
+        padding: 0;
+    }
+
+    .navbar-collapse .navbar-nav {
+        padding-top: 16px;
+        padding-bottom: 10px;
     }
 
     .navbar-nav {
@@ -991,7 +1005,6 @@ input[type="file"].form-control {
         flex-direction: column;
         align-items: center;
 
-        gap: 12px;
         margin: 0;
     }
 
@@ -1007,10 +1020,6 @@ input[type="file"].form-control {
 
         line-height: 1.2;
         text-align: center;
-    }
-
-    .navbar-nav .scan-btn {
-        margin-top: 25px;
     }
 
     /* ================= HOME PAGE ================= */
