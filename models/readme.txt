@@ -1,1 +1,0 @@
-If the model file plant_disease_recog_model_pwp.keras is not in this folder, download and paste the file in the folder and delete this readme.txt file.
