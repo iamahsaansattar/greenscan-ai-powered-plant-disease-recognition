@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ===================== CONTACT PAGE UX ===================== */
-    if (document.body.classList.contains("contact-page")) {
+    /* ===================== CONTACT FORM UX (HOME + CONTACT) ===================== */
+    if (
+        document.body.classList.contains("contact-page") ||
+        document.body.classList.contains("home-page")
+    ) {
 
         const contactForm = document.querySelector('form[action*="contact"]');
         const submitBtn = document.getElementById("contactSubmitBtn");
-        const successAlert = document.querySelector(".contact-glass-card .alert-success");
 
         /* Disable submit button after click to prevent duplicates */
         if (contactForm && submitBtn) {
@@ -34,22 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        /* Auto-dismiss success message after 4 seconds */
-        if (successAlert) {
-            setTimeout(() => {
-                successAlert.style.opacity = "1";
-
-                requestAnimationFrame(() => {
-                    successAlert.style.transition = "opacity 0.5s ease";
-                    successAlert.style.opacity = "0";
-                });
-
-                setTimeout(() => {
-                    successAlert.remove();
-                }, 500);
-
-            }, 4000);
-        }
     }
 
 });

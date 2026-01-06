@@ -182,13 +182,27 @@
     </div>
 
     <!-- ===================== HOME CONTACT SECTION ===================== -->
-    <div class="home-section">
+    <div class="home-section" id="home-contact">
 
         <div class="home-glass-card contact-glass-card">
 
             <h2 class="contact-title">Contact Us</h2>
 
+            <!-- Success Message -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-success text-center mb-4">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!-- Contact Form -->
             <form method="POST" action="{{ url_for('contact') }}">
+
+                <input type="hidden" name="source" value="home">
 
                 <!-- Name & Email -->
                 <div class="row g-3">
@@ -196,13 +210,13 @@
                     <div class="col-12 col-md-6 text-start">
                         <label class="form-label">Name</label>
                         <input
-                        type="text"
-                        name="name"
-                        class="form-control"
-                        placeholder="Your full name"
-                        maxlength="22"
-                        required
-                    >
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder="Your full name"
+                            maxlength="22"
+                            required
+                        >
                     </div>
 
                     <div class="col-12 col-md-6 text-start">

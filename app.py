@@ -175,6 +175,7 @@ def contact():
         name = request.form.get("name")
         email = request.form.get("email")
         comment = request.form.get("comment")
+        source = request.form.get("source")  # "home" or None
 
         with get_db_connection() as conn:
             cursor = conn.cursor()
@@ -191,7 +192,10 @@ def contact():
             "success"
         )
 
-        return redirect(url_for("contact"))
+        if source == "home":
+            return redirect(url_for("home") + "#home-contact")
+        else:
+            return redirect(url_for("contact"))
 
     return render_template("contact.html", active_page="contact")
 

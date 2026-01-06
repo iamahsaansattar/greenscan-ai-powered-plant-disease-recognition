@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
 
-/* ===================== GENERAL ===================== */
+/* ===================== SMOOTH SCROLL (GLOBAL) ===================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===================== GENERAL (GLOBAL) ===================== */
 body {
     display: flex;
     flex-direction: column;
@@ -17,7 +22,7 @@ body {
     background-color: #F5F5F5;
 }
 
-/* ===================== GLOBAL BACKGROUND ===================== */
+/* ===================== BACKGROUND (GLOBAL) ===================== */
 body::before {
     content: "";
     position: fixed;
@@ -180,7 +185,8 @@ body::before {
 }
 
 /* ===================== HOME PAGE ===================== */
-#how-to-greenscan {
+#how-to-greenscan,
+#home-contact {
     scroll-margin-top: calc(var(--navbar-height) + 40px);
 }
 
