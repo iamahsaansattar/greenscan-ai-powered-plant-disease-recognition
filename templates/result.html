@@ -13,7 +13,7 @@
 
         <!-- Image -->
         <div class="result-img-container">
-            <img src="{{ imagepath }}" alt="Uploaded Plant" class="result-image">
+            <img src="{{ imagepath }}" alt="Uploaded Image" class="result-image">
         </div>
 
         <!-- Text -->
@@ -22,37 +22,53 @@
 
             <div class="result-details">
 
-                <div class="label-value-group">
-                    <p class="label">Plant</p>
-                    <p class="value">{{ plant_name }}</p>
-                </div>
+                {% if result_type == "irrelevant" %}
 
-                <div class="label-value-group">
-                    <p class="label">
-                        {% if disease_name == "No disease detected." %}
-                            Status
-                        {% else %}
-                            Disease
-                        {% endif %}
-                    </p>
-                    <p class="value">{{ disease_name }}</p>
-                </div>
+                    {% for paragraph in user_message.split('\n\n') %}
+                        <p class="value">
+                            {{ paragraph }}
+                        </p>
+                    {% endfor %}
 
-                {% if disease_name != "No disease detected." %}
-                    <div class="label-value-group">
-                        <p class="label">Cause</p>
-                        <p class="value">{{ disease_cause }}</p>
-                    </div>
                 {% else %}
+
                     <div class="label-value-group">
-                        <p class="label">Recommendation</p>
-                        <p class="value">{{ disease_cure }}</p>
+                        <p class="label">Plant</p>
+                        <p class="value">{{ plant_name }}</p>
                     </div>
+
+                    <div class="label-value-group">
+                        <p class="label">
+                            {% if disease_name == "No disease detected." %}
+                                Status
+                            {% else %}
+                                Disease
+                            {% endif %}
+                        </p>
+                        <p class="value">{{ disease_name }}</p>
+                    </div>
+
+                    {% if disease_name != "No disease detected." %}
+                        <div class="label-value-group">
+                            <p class="label">Cause</p>
+                            <p class="value">{{ disease_cause }}</p>
+                        </div>
+                    {% else %}
+                        <div class="label-value-group">
+                            <p class="label">Recommendation</p>
+                            <p class="value">{{ disease_cure }}</p>
+                        </div>
+                    {% endif %}
+
                 {% endif %}
 
             </div>
 
-            {% if disease_name != "No disease detected." %}
+            {% if result_type == "irrelevant" %}
+                <a href="{{ url_for('upload') }}" class="scan-btn">
+                    UPLOAD A PLANT LEAF IMAGE
+                </a>
+            {% elif disease_name != "No disease detected." %}
                 <a href="#treatment-section" class="scan-btn">
                     CLICK HERE TO SEE TREATMENT
                 </a>
@@ -66,7 +82,7 @@
     </div>
 
     <!-- ===================== BELOW THE FOLD (DISEASE ONLY) ===================== -->
-    {% if disease_name != "No disease detected." %}
+    {% if result_type != "irrelevant" and disease_name != "No disease detected." %}
     <div id="treatment-section" class="result-box reverse-layout">
 
         <!-- Image -->

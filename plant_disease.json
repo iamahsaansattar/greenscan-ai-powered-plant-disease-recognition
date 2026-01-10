@@ -36,8 +36,9 @@
     },
     {
         "plant_name": "Background_without_leaves",
-        "disease_name": "None",
-        "disease_cure": "Not applicable."
+        "disease_name": "Irrelevant Image",
+        "result_type": "irrelevant",
+        "user_message": "The uploaded image does not appear to be a plant leaf. GreenScan works best with clear, focused images of plant leaves.\n\nFor better results, upload a clear, high-resolution image of a single plant leaf to receive accurate disease detection and treatment recommendations."
     },
     {
         "plant_name": "Blueberry",

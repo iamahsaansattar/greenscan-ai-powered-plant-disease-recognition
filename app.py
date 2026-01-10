@@ -123,6 +123,9 @@ def upload():
         plant_name = disease_info["plant_name"]
         raw_disease_name = disease_info["disease_name"]
 
+        # Determine result type (normal / irrelevant)
+        result_type = disease_info.get("result_type", "normal")
+
         last_prediction = {
             "imagepath": f"/uploadimages/{filename}",
             "plant_name": plant_name,
@@ -146,11 +149,16 @@ def upload():
             "disease_details": get_safe_value(
                 disease_info, "disease_details", None
             ),
+            "result_type": result_type,
+            "user_message": get_safe_value(
+                disease_info, "user_message", None
+            ),
         }
 
         return redirect(url_for("result"))
 
     return render_template("upload.html", active_page="upload")
+
 
 @app.route("/result")
 def result():
@@ -167,6 +175,8 @@ def result():
         cure_manufacturer=last_prediction["cure_manufacturer"],
         cure_manufacturer_logo=last_prediction["cure_manufacturer_logo"],
         disease_details=last_prediction["disease_details"],
+        result_type=last_prediction["result_type"],
+        user_message=last_prediction["user_message"],
     )
 
 @app.route("/contact", methods=["GET", "POST"])
@@ -175,7 +185,7 @@ def contact():
         name = request.form.get("name")
         email = request.form.get("email")
         comment = request.form.get("comment")
-        source = request.form.get("source")  # "home" or None
+        source = request.form.get("source")
 
         with get_db_connection() as conn:
             cursor = conn.cursor()
