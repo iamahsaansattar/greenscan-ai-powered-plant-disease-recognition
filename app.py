@@ -82,8 +82,16 @@ with open("plant_disease.json", "r", encoding="utf-8") as f:
 UPLOAD_FOLDER = "uploadimages"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "webp"}
+
 # Store last prediction temporarily
 last_prediction = {}
+
+def allowed_file(filename):
+    return (
+        "." in filename
+        and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
+    )
 
 def get_safe_value(item, key, default=None):
     """Safely fetch optional JSON fields"""
@@ -103,7 +111,18 @@ def upload():
     global last_prediction
 
     if request.method == "POST":
-        image = request.files["img"]
+        image = request.files.get("img")
+
+        if not image or image.filename == "":
+            flash("Please upload a single image file.", "error")
+            return redirect(url_for("upload"))
+
+        if not allowed_file(image.filename):
+            flash(
+                "Invalid file type. Please upload a JPG, JPEG, PNG, or WEBP image.",
+                "error"
+            )
+            return redirect(url_for("upload"))
 
         filename = f"{uuid.uuid4().hex}_{image.filename}"
         filepath = os.path.join(UPLOAD_FOLDER, filename)
@@ -158,7 +177,6 @@ def upload():
         return redirect(url_for("result"))
 
     return render_template("upload.html", active_page="upload")
-
 
 @app.route("/result")
 def result():

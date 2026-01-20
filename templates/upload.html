@@ -6,14 +6,25 @@
 {% block content %}
 
 <!-- ===================== UPLOAD HERO ===================== -->
-<div class="hero-section d-flex justify-content-center align-items-center">
+<div class="upload-hero">
 
-    <!-- Upload Card -->
-    <div class="upload-card text-center p-4">
-        <h2 class="mb-4">Upload Plant Image</h2>
+    <div class="upload-card">
+
+        <h2 class="upload-title">Upload Plant Image</h2>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-danger text-center mb-3">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         <!-- Tips Section -->
-        <div class="tips-section mb-3">
+        <div class="tips-section">
             <div class="tips-heading">Tips for Better Results:</div>
             <ul class="tips-list">
                 <li>Take a well-lit photo for better results.</li>
@@ -23,10 +34,29 @@
         </div>
 
         <!-- Upload Form -->
-        <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
-            <input type="file" name="img" class="form-control" required>
-            <button type="submit" class="scan-btn w-100">Analyze Image</button>
+        <form
+            method="POST"
+            action="{{ url_for('upload') }}"
+            enctype="multipart/form-data"
+        >
+            <div class="mb-3 text-start">
+                <input
+                    type="file"
+                    name="img"
+                    class="form-control"
+                    accept=".jpg,.jpeg,.png,.webp,image/*"
+                    required
+                >
+            </div>
+
+            <button
+                type="submit"
+                class="scan-btn w-100"
+            >
+                Analyze Image
+            </button>
         </form>
+
     </div>
 
 </div>
