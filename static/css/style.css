@@ -242,7 +242,7 @@ body::before {
     min-width: 300px;
 
     color: #FFFFFF;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .hero-main-title {
@@ -362,7 +362,7 @@ body::before {
     text-align: center;
 
     color: #4CAF50;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .how-it-works-wrapper {
@@ -385,7 +385,7 @@ body::before {
 
     color: #FFFFFF;
     text-align: justify;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .how-step .step-number {
@@ -622,7 +622,7 @@ input[type="file"].form-control {
     font-size: 40px;
 
     color: #4CAF50;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .contact-glass-card .form-label {
@@ -631,7 +631,7 @@ input[type="file"].form-control {
     font-size: 1rem;
 
     color: #FFFFFF;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .contact-glass-card .form-control {
@@ -679,7 +679,7 @@ input[type="file"].form-control {
     font-size: 0.85rem;
 
     color: rgba(255, 255, 255, 0.85);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .contact-glass-card .alert {
@@ -755,7 +755,7 @@ input[type="file"].form-control {
     font-size: 40px;
 
     color: #4CAF50;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .about-content {
@@ -768,11 +768,11 @@ input[type="file"].form-control {
     text-align: justify;
     text-justify: inter-word;
 
-    text-shadow: 0 1px 2px rgba(0,0,0,1.0);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .about-content h3 {
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 8px;
 
     font-weight: 600;
@@ -788,7 +788,7 @@ input[type="file"].form-control {
 
     color: #4CAF50;
 
-    text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .about-cta {
@@ -821,7 +821,7 @@ input[type="file"].form-control {
     color: #FFFFFF;
 
     text-align: justify;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .purpose-block h3 {
@@ -1095,26 +1095,12 @@ input[type="file"].form-control {
     }
 
     /* ================= HOME PAGE ================= */
-    .hero-wrapper {
-        flex-direction: column-reverse;
-
-        gap: 40px;
-
-        text-align: center;
-    }
-
     .hero-left {
         text-align: center;
     }
 
     .hero-main-title {
         font-size: 3.0rem;
-    }
-
-    .hero-sub-title {
-        margin-bottom: 14px;
-
-        font-size: 24px;
     }
 
     .hero-image {
@@ -1128,35 +1114,32 @@ input[type="file"].form-control {
     }
 
     .home-hero-wrapper .hero-left {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
 
         max-width: 400px;
+        width: 100%;
 
         text-align: center;
     }
 
     .home-hero-wrapper .hero-right {
+        display: flex;
+        align-items: center;
         justify-content: center;
 
         padding: 0;
-
-        text-align: center;
-    }
-
-    .home-glass-card {
-        padding: 40px;
     }
 
     .home-glass-card .hero-sub-title {
         text-align: center;
     }
 
-    .home-glass-card .hero-intro {
-        text-align: justify;
-    }
-
     .home-glass-card .hero-cta-btn {
-    margin-bottom: 0;
+        margin-bottom: 0;
+    }
 
     /* ================= RESULT PAGE ================= */
     .result-container {
@@ -1212,50 +1195,9 @@ input[type="file"].form-control {
 
 @media (max-width: 768px) {
 
-    /* ================= UPLOAD + CONTACT PAGE (GLOBAL) ================= */
-    .hero-section.d-flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        min-height: calc(100vh - var(--navbar-height) - var(--navbar-height));
-
-        margin-top: var(--navbar-height);
-        padding: 40px;
-    }
-
     /* ================= HOME PAGE ================= */
-    .home-glass-card {
-        padding: 40px;
-    }
-
     .home-hero-wrapper .hero-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
         max-width: 300px;
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .home-hero-wrapper .hero-right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        padding: 0;
-    }
-
-    .home-glass-card .hero-sub-title {
-        text-align: center;
-    }
-
-    .home-glass-card .hero-intro {
-        text-align: justify;
-        text-justify: inter-word;
     }
 
     .how-it-works-wrapper {
